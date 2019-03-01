@@ -1,0 +1,159 @@
+Insertion order is guranteed in Link List . 
+   Insert 
+           Array 
+
+           Begning : Create space at bening .How can we can create? We need to move all element to right to create space for element to added at begning . O(n)
+           
+		   LinList 
+           
+		   Begning :  Head 
+		                
+		              Node ( first Node ) -> Node (Second Node ) -> Node( Third Node ) 
+					  New Node  () not poiting any where 
+					  we will poiting new node to first Node and Adjust Head to point to new Node 
+					  New Node - Node ( First )- > Node(Second) -> Node ->( Third )
+					  Head = New Node ;
+					  O(1)
+					  
+					 
+           Array 
+                 InsertAtEnd   O(N) we need to find add element depending on array size 
+				 
+				 if array ( is full but last index is available ) meaing last elment has index length-2 
+                 if ( array[length-2]!=null ) 
+                     array[length-1] = new Element    O(1)				 
+				  
+                 if array is not Full
+				 
+                 We need to travese the array to find the correct index where we need to add 
+                 int [100]  array has only 15  
+                       array[100]=new element  it is wrong ;
+                       arrat[16] = new element is correct statment 					   
+                 
+           Linked List  : alway need to traverse to find the last node which point to   NULL 
+                       New Node()  not poiting any where 
+                       Last( Node)-> New Node ()->NULL   meaning lastNode.setNext( new Node());
+                       It is alway O(N)	
+
+
+
+            Array 
+                 In between  : Inserting at middle will alway be O(N) we need to find the correct index and then move element to 
+                              right O(N) 
+                                  1 N-1  move right 
+                                  5 N-5  Move right 								  
+								  
+			LinkedList 
+			      In Between 
+				            We need to traverse the List to find the correct position of the Element to add 
+							
+							Node( First)-->Node(Second)--> Node ( Third) -> New Node -> ForthNode 
+							
+							                                            --> Node( Fourth) 
+							    If we need to add element at  third position
+								 If( data.getNextNode().getData==thirdNode){
+								    Case :
+									  1-  addBeforeNode()
+									  2-  addAfterNode()
+								 
+								 
+								 }
+								 
+								 addBefore(){
+								    Previous = Node ;
+									After = NodeNext ;
+								    New Node () -->NodeNext ;
+									 Second Node should point to New Node ; Now how to get the address of the second ;
+								    Previous.setNode( New Node) ;
+								 }
+								third=data.getNextNode();
+								 afterNode(){
+								        Temp = data.getNextNode().nextNode() 
+										Node ( Third).getNextNode()
+										
+									
+								 data.getNextNode(	New Node());
+								 	New Node().setNext(temp)
+								 
+								 }
+								 
+								 Node Object = data.getNextNode()
+								 Object.nextNode() ===Forth Node ;
+								 
+								 ThirdNode.next() =  Object.nextNode();
+								 
+								 Object refrece of third
+								 
+								 
+								 
+							Node {
+							   ref of next Node ;
+							   
+							
+							}
+							
+						
+							
+							
+
+
+Find Element:
+            Need to traverse the list to either by number of index( we need to keep traverse till the index number meet or by value ).
+			
+
+     
+
+Deletion 
+
+
+       Delete last element  O(N) 
+                 Traverse till you find node which point to null .
+
+                                        Node.next().next()==null
+										Temp = Mode.next().next();
+										
+										Node.next().setNext(NULL);
+										return temp;
+
+										
+		Delete First Node 	
+					   Head= firstNode ;
+					   Head=firstNode.next();
+					   temp =Head.next ;
+					   head=temp;	
+					   return temp ;
+
+
+
+       Delete in Middle 
+
+	        Before :
+                  Node(First Node ) --> Node(Second)--> Node(ThirdNode)--> Node(Forth)-->Node ( Fifth Node);
+				   var ret (Node Type) 
+				
+				   
+				   while(Node.next().data()==Second){
+				      ret=Node.next() ;
+					  Node.setNext(Node.next().next());
+				   }
+				   
+				  
+		    After :
+                     
+                	while(Node.next().data()==Third){
+				        
+						ret = Node.next().next();
+						Node.next().setNext(ret.next());
+						return ret ;
+				   }	
+				   
+				   
+				   
+				   
+
+
+
+                  				  
+
+
+         										
